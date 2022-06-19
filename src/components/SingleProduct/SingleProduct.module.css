@@ -1,0 +1,24 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 3rem;
+}
+
+.description {
+    display: flex;
+    justify-content: space-between;
+}
+
+.description h4, p {
+    margin: 0;
+    padding: 5px 0;
+}
+
+.image img {
+    height: 200px;
+    width: 200px;
+}
+
+.category {
+    padding: 5px 0;
+}
