@@ -25,7 +25,7 @@
 }
 
 .imageDiv img {
-   width: 10rem;
+   width: 12rem;
 }
 
 .details {
@@ -54,4 +54,36 @@
 
 .details span {
     font-weight: bold;
+}
+
+.details button {
+    font-size: 2rem;
+    width: 4rem;
+    border: 2px solid black;
+    border-radius: 5px;
+    /* padding: 5px; */
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.details button:hover {
+    background: black;
+    color: white;
+}
+
+.cart_details {
+    display: flex;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.cart_details button {
+    width: 5rem;
+    font-size: 1.5rem;
+    padding: 6px 0;
+    margin-right: 2rem;
+}
+
+.cartBtns button:nth-child(2) {
+    margin-left: 3rem;
 }

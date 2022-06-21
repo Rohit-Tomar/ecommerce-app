@@ -4,6 +4,11 @@
     margin: 1rem 3rem;
 }
 
+.details {
+    background-color: #EEEEEE;
+    padding: 0 10px;
+}
+
 .description {
     display: flex;
     justify-content: space-between;

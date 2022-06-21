@@ -1,13 +1,14 @@
-import { useCallback } from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 import classes from "./AllProducts.module.css";
 import SingleProduct from "../SingleProduct/SingleProduct";
+import { useDispatch, useSelector } from "react-redux";
 
 const AllProducts = props => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [products, setProducts] = useState([]);
+  const dispatch = useDispatch();
+  const products = useSelector(store => store.productReducer.allProducts);
 
   const fetchProducts = useCallback(async () => {
     setLoading(true);
@@ -18,12 +19,12 @@ const AllProducts = props => {
         throw new Error("Something Went Wrongs");
       }
       const data = await response.json();
-      setProducts(data);
+      dispatch({ type: "SET_PRODUCTS", products: data });
     } catch (err) {
       setError(err.message);
     }
     setLoading(false);
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     fetchProducts();
@@ -33,9 +34,12 @@ const AllProducts = props => {
 
   if (loading)
     productList = (
-      <h1 style={{ textAlign: "center", marginTop: "50vh" }}>Loading...</h1>
+      <h1 style={{ textAlign: "center", marginTop: "20vh" }}>Loading...</h1>
     );
-  if (error) productList = <h1>Error</h1>;
+  if (error)
+    productList = (
+      <h1 style={{ marginTop: "7rem", textAlign: "center" }}>Error</h1>
+    );
 
   if (products.length > 0) {
     productList = (
@@ -43,7 +47,7 @@ const AllProducts = props => {
         {products.map(product => {
           return (
             <li key={product.id}>
-              <SingleProduct product={product} />
+              <SingleProduct product={product} showCategory />
             </li>
           );
         })}
@@ -51,7 +55,14 @@ const AllProducts = props => {
     );
   }
 
-  return <div className={classes.products}>{productList}</div>;
+  return (
+    <div>
+      <h2 style={{ marginTop: "8rem", textAlign: "center" }}>
+        Our All Products
+      </h2>
+      <div className={classes.products}>{productList}</div>
+    </div>
+  );
 };
 
 export default AllProducts;

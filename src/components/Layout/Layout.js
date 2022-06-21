@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import Toolbar from "./Toolbar/Toolbar";
+import Toolbar from "../Navigation/Toolbar/Toolbar";
 
 const Layout = props => {
   return (

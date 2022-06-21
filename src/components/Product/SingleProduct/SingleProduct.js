@@ -10,11 +10,15 @@ const SingleProduct = props => {
           <img src={image} alt="myImage" />
         </Link>
       </div>
-      <div className={classes.description}>
-        <p>{title.substring(0, 10)}</p>
-        <h4>{price}</h4>
+      <div className={classes.details}>
+        {props.showCategory && (
+          <div className={classes.category}>{category}</div>
+        )}
+        <div className={classes.description}>
+          <p>{title.substring(0, 10)}</p>
+          <h4>{price}</h4>
+        </div>
       </div>
-      <div className={classes.category}>{category}</div>
     </div>
   );
 };
