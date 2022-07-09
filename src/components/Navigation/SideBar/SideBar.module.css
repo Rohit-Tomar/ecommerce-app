@@ -1,0 +1,33 @@
+.sideBar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 500;
+    height: 100%;
+    width: 280px;
+    background-color: white;
+}
+
+.sideBar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    margin-top: 8vh;
+}
+
+.sideBar li {
+    margin-top: 20px;
+    padding: 10px 50px;
+}
+
+.sideBar a {
+    text-decoration: none;
+    color: black;
+}
+
+.sideBar a.active, 
+.sideBar a:hover {
+    color: brown;
+}

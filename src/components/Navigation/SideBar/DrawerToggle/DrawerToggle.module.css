@@ -1,0 +1,16 @@
+.drawerToggle {
+    height: 100%;
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 15px 0;
+    cursor: pointer;
+}
+
+.drawerToggle div {
+    width: 90%;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+}
